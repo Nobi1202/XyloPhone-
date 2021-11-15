@@ -20,3 +20,23 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Center(
+          child: TextButton(
+            onPressed: () {
+              final player = AudioCache();
+              player.play('note1.wav');
+            },
+            child: const Text("Click Me"),
+          ),
+        ),
+      ),
+    );
+  }
+}
